@@ -1,0 +1,108 @@
+<!-- views/assassins/assassinsnew.ejs -->
+<!-- http://www.killbase.com/assassins/new -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+  </head>
+
+  <body id="assassins">
+    <div class="topbanner">
+      <div class="crossbase">
+        <img src="../crosshair.png" alt="crosshair" class="cross">
+        <h1>Killbase</h1>
+      </div>
+
+      <div class="navlinksright">
+        <ul class="navlinkstop">
+          <li><a href="/">Home</a>|</li>
+          <li><a href="/assassins">Assassins</a>|</li>
+          <li><a href="/contracts">Contracts</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 class="writeA"></h4>
+
+    <!-- form to add a new assassin -->
+    <div class="row form">
+      <form action="/assassins" method="POST" class="col s12">
+        <div class="row L LTOP">
+          <div class="input-field col s7">
+            <input id="Name" type="text" name="fullName">
+            <label for="Name">Name:</label>
+          </div>
+          <div class="input-field col s2">
+            <input id="Age" type="text" name="age">
+            <label for="Age">Age:</label>
+          </div>
+        </div>
+        <div class="row L">
+          <div class="input-field col s7">
+            <input id="codeName" type="text" name="codeName">
+            <label for="codeName">Code Name:</label>
+          </div>
+          <div class="input-field col s2">
+            <input id="Price" type="text" name="price">
+            <label for="Price">Price:</label>
+          </div>
+        </div>
+        <div class="row L">
+          <div class="input-field col s7">
+            <input id="url" type="text">
+            <label for="url">Profile Image URL:</label>
+          </div>
+          <div class="input-field col s2">
+            <input id="Rating" type="text" name="rating">
+            <label for="Rating">Rating:</label>
+          </div>
+        </div>
+        <div class="row L">
+          <div class="input-field col s7">
+            <input id="Weapon" type="text" name="weapon">
+            <label for="Weapon">Weapon of Choice:</label>
+          </div>
+          <div class="input-field col s2">
+            <input id="Kills" type="text" name="kills">
+            <label for="Kills">Kills:</label>
+          </div>
+        </div>
+        <div class="row LB">
+          <div class="input-field col s7">
+            <input id="Email" type="email" name="contactInfo">
+            <label for="Email">Contact Email:</label>
+          </div>
+        </div>
+
+        <!-- add assassin button -->
+        <input type="submit" value="Submit Assassin" class="waves-effect waves-light btn submita">
+        <input type="reset" value="Reset" class="waves-effect waves-light btn submita">
+      </form>
+    </div>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeA").typed({
+          strings: ["wD!548 @{de8} bd 6dsfd", "Add a New Assassin"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+    <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,51 @@
+<!-- views/home.ejs (home page)-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('partials/headinfo') %>
+  </head>
+
+  <body id="home">
+    <div class="crossbase">
+      <img src="crosshair.png" alt="crosshair" class="cross">
+      <h1>Killbase C++</h1>
+    </div>
+
+    <div class="typed">
+      <div class="assassinsContractsHome">
+        <a href="assassins"><h2 class="writeAs">Assassins</h2></a>
+      </div>
+
+      <div class="assassinsContractsHome">
+        <a href="contracts"><h2 class="writeCo">Contracts</h2></a>
+      </div>
+    <div>
+
+    <!-- footer -->
+    <%- include('partials/footer') %>
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeAs").typed({
+          strings: ["XD!m @zYk4{de}8? bd%3", "Assassins"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+
+        $(".writeCo").typed({
+          strings: ["ap9t%FJg sK*r+", "Contracts"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+  </body>
+
+</html>

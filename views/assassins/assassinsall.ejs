@@ -1,0 +1,78 @@
+<!-- views/assassins/assassinsall.ejs -->
+<!-- http://www.killbase.com/assassins -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+  </head>
+
+  <body id="assassins">
+    <%- include('../partials/navbar') %>
+
+    <h4 class="writeA">Active Assassins</h4>
+    <!-- create assassin button -->
+    <a href="/assassins/new" class="waves-effect waves-light btn">Add Assassin</a>
+
+    <!-- GET all assassins data -->
+    <ul class="collapsible popout">
+      <% assassins.forEach(function(assassins) { %>
+        <li>
+          <div class="collapsible-header">
+            <h6>Code Name: <%= assassins.codeName %></h6>
+          </div>
+          <div class="collapsible-body">
+            <div class="leftname">
+              <h6>Name: <%= assassins.fullName %></h6>
+            </div>
+            <div class="midsquare">
+              <div class="ratingprice">
+                <h6>Rating: <%= assassins.rating %></h6>
+                <h6>Price: <%= assassins.price %></h6>
+                <h6>Kills: <%= assassins.kills %></h6>
+                <h6>Age: <%= assassins.age %></h6>
+              </div>
+              <div class="weaponcontact">
+                <h6>Weapon: <%= assassins.weapon %></h6>
+                <h6>Contact: <%= assassins.contactInfo %></h6>
+              </div>
+            </div>
+            <div class="rightsquare">
+              <a href="/assassins/<%= assassins.id %>"><img src="square.png"><h6>More Info</h6></a>
+              <a href="/assassins/<%= assassins.id %>/edit"><img src="square.png"><h6>Edit</h6></a>
+              <div class="rightsquarebutton">
+                <form action="/assassins/<%= assassins.id %>?_method=DELETE" method="POST">
+                  <img src="square.png"><button type="submit" class="waves-effect waves-light btn submitb"><h6 class="upp">Delete</h6></a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeA").typed({
+          strings: ["XD!m @zYk4{de8}? bd%3lmdsfvd", "Active Assassins"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+    <!-- Compiled and minified JavaScript for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+
+</html>

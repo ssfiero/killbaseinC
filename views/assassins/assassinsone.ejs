@@ -1,0 +1,112 @@
+<!-- views/assassins/assassinsone.ejs -->
+<!-- http://www.killbase.com/assassins/1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+  </head>
+
+  <body id="assassins">
+    <div class="topbanner">
+      <div class="crossbase">
+        <img src="../crosshair.png" alt="crosshair" class="cross">
+        <h1>Killbase</h1>
+      </div>
+
+      <div class="navlinksright">
+        <ul class="navlinkstop">
+          <li><a href="/">Home</a>|</li>
+          <li><a href="/assassins">Assassins</a>|</li>
+          <li><a href="/contracts">Contracts</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <h4 class="writeA">Active Assassins</h4>
+
+    <!-- GET data for one assassin -->
+    <ul class="collapsible popout">
+      <% assassin.forEach(function(assassin) { %>
+        <li>
+          <div class="collapsible-header">
+            <h6>Code Name: <%= assassin.codeName %></h6>
+          </div>
+          <div class="collapsible-body">
+            <div class="leftname">
+              <h6>Name: <%= assassin.fullName %></h6>
+            </div>
+            <div class="midsquare">
+              <div class="ratingprice">
+                <h6>Rating: <%= assassin.rating %></h6>
+                <h6>Price: <%= assassin.price %></h6>
+                <h6>Kills: <%= assassin.kills %></h6>
+                <h6>Age: <%= assassin.age %></h6>
+              </div>
+              <div class="weaponcontact">
+                <h6>Weapon: <%= assassin.weapon %></h6>
+                <h6>Contact: <%= assassin.contactInfo %></h6>
+              </div>
+            </div>
+            <div class="rightsquare">
+              <a href="/assassins/<%= assassin.id %>/edit"><img src="../square.png"><h6>Edit</h6></a>
+              <div class="rightsquarebutton">
+                <form action="/assassins/<%= assassin.id %>?_method=DELETE" method="POST">
+                  <img src="../square.png"><button type="submit" class="waves-effect waves-light btn submitb"><h6 class="upp">Delete</h6></a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+
+    <h4 class="writeB">Active Contracts</h4>
+
+    <ul class="collapsible popout">
+      <li>
+        <div class="collapsible-body">
+          <div class="actLeft">
+            <img class="photo" src="<%-  -%>"></img>
+          </div>
+          <div class="actMid">
+            <h6>Target Name: <%=  %></h6>
+            <h6>Target Location: <%=  %></h6>
+          </div>
+          <div class="actRight">
+            <h6>Security Level: <%=  %></h6>
+            <h6>Client Name: <%=  %></h6>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeA").typed({
+          strings: ["rD!m @zY4{gf8}? as9d", "Assassin Info"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+
+        $(".writeB").typed({
+          strings: ["lm% @z8}- fd", "Active Contracts"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+  </body>
+
+</html>

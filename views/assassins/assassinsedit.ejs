@@ -1,0 +1,109 @@
+<!-- views/assassins/assassinsedit.ejs -->
+<!-- http://www.killbase.com/assassins/1/edit -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+
+  </head>
+
+  <body id="assassins">
+    <div class="topbanner">
+      <div class="crossbase">
+        <img src="/../crosshair.png" alt="crosshair" class="cross">
+        <h1>Killbase</h1>
+      </div>
+
+      <div class="navlinksright">
+        <ul class="navlinkstop">
+          <li><a href="/">Home</a>|</li>
+          <li><a href="/assassins">Assassins</a>|</li>
+          <li><a href="/contracts">Contracts</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 class="writeEdit"></h4>
+
+    <!-- Edit an existing assassin -->
+    <div class="row form">
+      <form action="/assassins/<%= assassin.id %>?_method=PUT" method="POST" class="col s12">
+          <div class="row L LTOP">
+            <div class="input-field col s7">
+              <input id="Name" type="text" class="active" value="<%= assassin.fullName %>" name="fullName">
+              <label for="Name">Name:</label>
+            </div>
+            <div class="input-field col s2">
+              <input id="Age" type="text" class="active" value="<%= assassin.age %>" name="age">
+              <label for="Age">Age:</label>
+            </div>
+          </div>
+          <div class="row L">
+            <div class="input-field col s7">
+              <input id="codeName" type="text" class="active" value="<%= assassin.codeName %>" name="codeName">
+              <label for="codeName">Code Name:</label>
+            </div>
+            <div class="input-field col s2">
+              <input id="Price" type="text" class="active" value="<%= assassin.price %>" name="price">
+              <label for="Price">Price:</label>
+            </div>
+          </div>
+          <div class="row L">
+            <div class="input-field col s7">
+              <input id="url" type="text">
+              <label for="url">Profile Image URL:</label>
+            </div>
+            <div class="input-field col s2">
+              <input id="Rating" type="text" class="active" value="<%= assassin.rating %>" name="rating">
+              <label for="Rating">Rating:</label>
+            </div>
+          </div>
+          <div class="row L">
+            <div class="input-field col s7">
+              <input id="Weapon" type="text" class="active" value="<%= assassin.weapon %>" name="weapon">
+              <label for="Weapon">Weapon of Choice:</label>
+            </div>
+            <div class="input-field col s2">
+              <input id="Kills" type="text" class="acive" value="<%= assassin.kills %>" name="kills">
+              <label for="Kills">Kills:</label>
+            </div>
+          </div>
+          <div class="row LB">
+            <div class="input-field col s7">
+              <input id="Email" type="email" class=" active" value="<%= assassin.contactInfo %>" name="contactInfo">
+              <label for="Email">Contact Email:</label>
+            </div>
+          </div>
+
+          <!-- add assassin button -->
+          <input type="submit" value="Save Changes" class="waves-effect waves-light btn submita">
+          <input type="reset" value="Reset" class="waves-effect waves-light btn submita">
+      </form>
+    </div>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeEdit").typed({
+          strings: ["+D!m @dY4[de8]- b%3lmjo", "Edit Assassin"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+    <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+
+</html>

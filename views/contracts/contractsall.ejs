@@ -1,0 +1,72 @@
+<!-- views/contracts/contractsall.ejs -->
+<!-- http://www.killbase.com/contracts -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+  </head>
+
+  <body id="contracts">
+    <%- include('../partials/navbar') %>
+
+    <h4 class="writeC">Available Contracts</h4>
+    <!-- create contract button -->
+    <a href="/contracts/new" class="waves-effect waves-light btn">Add Contract</a>
+
+    <!-- GET all contracts data -->
+    <ul class="collapsible popout">
+      <% contracts.forEach(function(contracts) { %>
+        <li>
+          <div class="collapsible-header">
+            <h6>Target Name: <%= contracts.targetName %></h6>
+          </div>
+          <div class="collapsible-body">
+            <div >
+              <img class="photo" src="<%- contracts.targetPhoto -%>"></img>
+            </div>
+            <div class="midsquare">
+              <h6>Client Name: <%= contracts.clientName %></h6>
+              <h6>Target Location: <%= contracts.targetLocation %></h6>
+              <h6>Budget: <%= contracts.budget %></h6>
+              <h6>Security Level: <%= contracts.securityLevel %></h6>
+            </div>
+            <div class="rightsquare">
+              <a href="/contracts/<%= contracts.id %>"><img src="square.png"><h6>More Info</h6></a>
+              <a href="/contracts/<%= contracts.id %>/edit"><img src="square.png"><h6>Edit</h6></a>
+              <div class="rightsquarebutton">
+                <form action="/contracts/<%= contracts.id %>?_method=DELETE" method="POST">
+                  <img src="square.png"><button type="submit" class="waves-effect waves-light btn submitb"><h6 class="upp">Delete</h6></a>
+                </form>
+              </div>
+              <a class="done" href="#"><img src="square.png"><h6>Complete</h6></a>
+            </div>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeC").typed({
+          strings: ["ap9%FJg sK*r+ Tkif[90uj]0", "Available Contracts"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+    <!-- Compiled and minified JavaScript for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+
+</html>

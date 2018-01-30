@@ -1,0 +1,101 @@
+<!-- views/contracts/contractsnew.ejs -->
+<!-- http://www.killbase.com/contracts/new -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+  </head>
+
+  <body id="contracts">
+    <div class="topbanner">
+      <div class="crossbase">
+        <img src="../crosshair.png" alt="crosshair" class="cross">
+        <h1>Killbase</h1>
+      </div>
+
+      <div class="navlinksright">
+        <ul class="navlinkstop">
+          <li><a href="/">Home</a>|</li>
+          <li><a href="/assassins">Assassins</a>|</li>
+          <li><a href="/contracts">Contracts</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 class="writeC">Available Contracts</h4>
+
+    <!-- form to add a new contract -->
+    <div class="row form">
+      <form action="/contracts" method="POST" class="col s12">
+        <div class="row L LTOP">
+          <div class="input-field col s7">
+            <input id="targetName" type="text" name="targetName">
+            <label for="targetName">Target Name:</label>
+          </div>
+          <div class="input-field col s2">
+            <input id="securityLevel" type="text" name="securityLevel">
+            <label for="securityLevel">Security Level:</label>
+          </div>
+        </div>
+        <div class="row L">
+          <div class="input-field col s7">
+            <input id="targetLocation" type="text" name="targetLocation">
+            <label for="targetLocation">Target Location:</label>
+          </div>
+          <div class="input-field col s2">
+            <input id="budget" type="text" name="budget">
+            <label for="budget">Budget:</label>
+          </div>
+        </div>
+        <div class="row L">
+          <div class="input-field col s7">
+            <input id="targetPhoto" type="text" name="targetPhoto">
+            <label for="targetPhoto">Target Image URL:</label>
+          </div>
+        </div>
+        <div class="row LB">
+          <div class="input-field col s7">
+            <input id="clientName" type="text" name="clientName">
+            <label for="clientName">Client Name:</label>
+          </div>
+          <div class="switch col s4">
+            <label>
+              Current Client
+              <input type="checkbox">
+              <span class="lever"></span>
+              New Client
+            </label>
+          </div>
+        </div>
+
+        <!-- add contract button -->
+        <input type="submit" value="Submit Contract" class="waves-effect waves-light btn submita">
+        <input type="reset" value="Reset" class="waves-effect waves-light btn submita">
+      </form>
+    </div>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeC").typed({
+          strings: ["a%Jg rKr+ Bk00 yd8$", "Add a New Contract"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+      });
+    </script>
+
+    <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+
+</html>

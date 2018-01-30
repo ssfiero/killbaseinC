@@ -1,0 +1,132 @@
+<!-- views/contracts/contractsone.ejs -->
+<!-- http://www.killbase.com/contracts/1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- head tags (meta, css) -->
+    <%- include('../partials/headinfo') %>
+  </head>
+
+  <body id="contracts">
+    <div class="topbanner">
+      <div class="crossbase">
+        <img src="../crosshair.png" alt="crosshair" class="cross">
+        <h1>Killbase</h1>
+      </div>
+
+      <div class="navlinksright">
+        <ul class="navlinkstop">
+          <li><a href="/">Home</a>|</li>
+          <li><a href="/assassins">Assassins</a>|</li>
+          <li><a href="/contracts">Contracts</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h4 class="writeC">Available Contracts</h4>
+
+    <!-- GET all assassins data -->
+    <ul class="collapsible popout">
+      <% contract.forEach(function(contract) { %>
+        <li class="doneLi">
+          <div class="collapsible-header">
+            <h6>Target Name: <%= contract.targetName %></h6>
+          </div>
+          <div class="collapsible-body">
+            <div >
+              <img class="photo" src="<%- contract.targetPhoto -%>"></img>
+            </div>
+            <div class="midsquare">
+              <h6>Client Name: <%= contract.clientName %></h6>
+              <h6>Target Location: <%= contract.targetLocation %></h6>
+              <h6>Budget: <%= contract.budget %></h6>
+              <h6>Security Level: <%= contract.securityLevel %></h6>
+            </div>
+            <div class="rightsquare">
+              <a href="/contracts/<%= contract.id %>/edit"><img src="../square.png"><h6>Edit</h6></a>
+              <div class="rightsquarebutton">
+                <form action="/contracts/<%= contract.id %>?_method=DELETE" method="POST">
+                  <img src="../square.png"><button type="submit" class="waves-effect waves-light btn submitb"><h6 class="upp">Delete</h6></a>
+                </form>
+              </div>
+              <a class="done" href="#"><img src="../square.png"><h6>Complete</h6></a>
+            </div>
+
+            <!-- dropdown menu to select assassin -->
+            <div class="row form dropdown">
+              <form action="/contracts" method="GET">
+                <div class="input-field col s2 dropd">
+                  <select name="" id="">
+                    <option value="" disabled selected></option>
+                    <option value="1">The Jackal</option>
+                    <option value="2">Old Man</option>
+                    <option value="3">Ghost Dog</option>
+                  </select>
+                  <label>Select Assassin</label>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+
+    <h4 class="writeD">Contracted Assassins</h4>
+
+    <ul class="collapsible popout">
+      <li>
+        <div class="collapsible-body">
+          <div class="actLeft">
+            <img class="photoconA" src="<%-  -%>"></img>
+          </div>
+          <div class="contractedA">
+            <h6>Name: <%=  %></h6>
+            <h6>Rating: <%=  %></h6>
+            <h6>Kills: <%=  %></h6>
+            <a href="<%=  %>"><img src="../square.png"><h6 class="remove">Remove</h6></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+    <!-- typed.js for typewriter effect -->
+    <script type="text/javascript">
+    	$(function(){
+        $(".writeC").typed({
+          strings: ["zz9%g s$*r+ ukif@9]0", "Contract Info"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+
+        $(".writeD").typed({
+          strings: ["x4% eJ$r uki)f", "Contracted Assassins"],
+          typeSpeed: -10,
+          backSpeed: -10,
+          showCursor: false,
+        });
+
+        // complete click action, apply css
+        $(".done").click(function() {
+          $(".doneLi").css({"background": "red", "opacity": "0.8"});
+        });
+
+        $('.collapsible').collapsible('open', 0);
+
+        $('select').material_select();
+      });
+    </script>
+
+    <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,307 @@
+/* home page */
+
+#home {
+  background-image: url("homenorse.gif");
+  background-size: cover;
+  border-top: 40px solid black;
+}
+
+#home h1 {
+    color: white;
+}
+
+.cross {
+  height: 100px;
+  width: 100px;
+  margin-top: 15px;
+}
+
+.crossbase {
+  display: flex;
+  margin-top: -40px;
+}
+
+.assassinsContractsHome {
+  margin-left: 115px;
+}
+
+h2 {
+  display: inline-block;
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 0px;
+}
+
+h2:hover {
+  color: red;
+}
+
+
+/* navbar */
+
+.topbanner {
+  display: flex;
+  margin-top: 40px;
+}
+
+.navlinksright {
+  width: 1050px;
+}
+
+.navlinkstop {
+  display: flex;
+  float: right;
+  font-size: 24px;
+}
+
+a {
+  color: #fff;
+  margin: 0px 10px 0px 10px;
+}
+
+a:hover {
+  color: red;
+}
+
+
+/* assassins */
+
+#assassins {
+  background-image: url("worldmapgrey.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+h4 {
+  margin: 0px 0px 30px 180px;
+}
+
+.btn {
+  background: rgba(0,0,0,0.8);
+  border: 1px solid #fff;
+  margin: 0px 0px 20px 180px;
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.collapsible {
+  width: 78%;
+  margin: auto;
+  border: black;
+}
+
+.collapsible-header, .collapsible-body {
+  background: rgba(0,0,0,0.8);
+  padding: 5px;
+  border: black;
+}
+
+.collapsible-header:hover {
+  color: red;
+}
+
+.collapsible-body {
+  display: flex;
+}
+
+.leftname {
+  display: flex;
+}
+
+.ratingprice {
+  display: flex;
+}
+
+.weaponcontact {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.rightsquare {
+  display: flex;
+}
+
+img {
+  height: 25px;
+  width: 25px;
+  margin: 0px 10px 0px 10px;
+}
+
+h6 {
+  margin-right: 30px;
+}
+
+.writeB {
+  margin: 30px 0px 20px 180px;
+}
+
+
+/* new assassin form */
+
+.form {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  width: 75%;
+}
+
+input {
+  background-image: url('');
+}
+
+.L {
+  margin: 0px 0px 0px 20px;
+}
+
+.LB {
+  margin: 0px 0px 20px 20px;
+}
+
+.switch {
+  margin-top: 28px;
+}
+
+label {
+  font-size: 15px;
+}
+
+.submita:hover {
+  color: red;
+}
+
+.btn.submita {
+  margin: 0px 0px 30px 30px;
+}
+
+.submitb {
+  border: none;
+  background: none;
+  margin: 0px 0px 10px 0px;
+  padding: 0px;
+}
+
+.submitb:hover {
+  color: red;
+  background: none;
+}
+
+.rightsquarebutton {
+  display: inline-table;
+  margin-top: 9px;
+}
+
+.upp {
+  text-transform: none;
+  margin: 0px 0px 0px 0px;
+}
+
+.input-field [type=text]:focus + label {
+  color: #fff !important;
+}
+
+.input-field [type=email]:focus + label {
+  color: #fff !important;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: red;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: red;
+}
+
+.LTOP {
+  margin-top: 25px;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  margin: 0px 0px 10px 0px;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid red !important;
+  box-shadow: 0 1px 0 0 red !important;
+}
+
+
+/* contracts */
+
+#contracts {
+  background-image: url("mapblue.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+.photo {
+  height: 200px;
+  width: 150px;
+}
+
+.midsquare {
+  margin-left: 20px;
+}
+
+.rightsquare>a {
+  display: flex;
+  margin-top: 10px;
+}
+
+.writeD {
+  margin: 30px 0px 20px 180px;
+}
+
+.actLeft {
+  margin: 10px 0px 10px 0px;
+}
+
+.actMid, .actRight {
+  margin: 20px 0px 0px 20px;
+}
+
+.photoconA {
+  height: 75px;
+  width: 75px;
+}
+
+.contractedA {
+  display: flex;
+  margin: 20px 0px 0px 20px;
+}
+
+.remove {
+  display: inline-block;
+}
+
+.dropdown {
+  background: none;
+  width: 35%;
+}
+
+.row .col.s2.dropd {
+  width: 50%;
+  margin-top: 0px;
+}
+
+.dropdown-content {
+  background: none;
+  color: #fff;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #fff;
+  font-size: 14px;
+}
+
+.dropdown-content li>a:hover, .dropdown-content li>span:hover {
+  color: red;
+}
+
+
+/* footer */
+
+.footer {
+  color: #fff;
+  text-align: left;
+}
