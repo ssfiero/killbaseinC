@@ -18,6 +18,7 @@ Step 2: Run the executable file ```./hello``` and designate the http address ```
 ```
 
 
+
 ## Nginx Server Commands
 
 Nginx web server: ```sudo nginx``` to start server
@@ -69,6 +70,12 @@ Compile and execute C++ file
 g++ test.cpp
 ./a.out
 ```
+
+
+
+## Nginx FastCGI and Proxying
+
+Nginx works very well when handling requests from other servers. `FastCGI` or Fast Common Gateway Interface is meant to improve performance of processing requests for dynamic content by not running each request on a separate process.
 
 
 

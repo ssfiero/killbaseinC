@@ -6,6 +6,9 @@
 #include <Wt/WText.h>
 
 
+// Wt::WApplication::useStyleSheet();
+
+
 class HelloApplication : public Wt::WApplication
 {
 public:
@@ -18,9 +21,12 @@ private:
     void greet();
 };
 
+
 HelloApplication::HelloApplication(const Wt::WEnvironment& env)
     : Wt::WApplication(env)
 {
+    useStyleSheet("wt.css");
+
     setTitle("Hello world");
 
     root()->addWidget(std::make_unique<Wt::WText>("Your name, please? "));
