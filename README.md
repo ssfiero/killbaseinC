@@ -3,6 +3,21 @@
 An update to the Killbase app built with C++
 
 
+## C++/Wt(Witty) Library Commands
+
+`g++` is a compiler which generates machine code for the `C++` language.
+
+Step 1: Compile source code in local file (.cpp) into a machine language file called an object file. The object file will be saved in your project folder. The ```-o``` tells ```g++``` to make an executable file named ```hello``` from the ```hello.cpp``` source file.
+```
+g++ -std=c++14 -o hello hello.cpp -lwthttp -lwt
+```
+
+Step 2: Run the executable file ```./hello``` and designate the http address ```localhost:``` and the port number ```9090```.
+```
+./hello --docroot . --http-address 0.0.0.0 --http-port 9090
+```
+
+
 ## Nginx Server Commands
 
 Nginx web server: ```sudo nginx``` to start server
@@ -46,7 +61,7 @@ Error logs: ```/usr/local/var/log/nginx/```
 
 
 
-## C++
+## General C++ Commands
 
 Compile and execute C++ file
 
