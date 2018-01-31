@@ -46,6 +46,17 @@ Error logs: ```/usr/local/var/log/nginx/```
 
 
 
+## C++
+
+Compile and execute C++ file
+
+```
+g++ test.cpp
+./a.out
+```
+
+
+
 ## Original Project Start Commands
 
 Knex database migration: ```knex migrate:latest``` or ```knex migrate:rollback```
